@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comando Linux</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assents/favicon.png" type="image/x-icon">
+    <script type="text/javascript" src="fuction.js"></script>
+</head>
+
+<body>
+
+  <!--NAVIGATION MENU-->
+
+    <div class="container">
+        <input id="checkbox-menu" type="checkbox">
+        <label for="checkbox-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <header>
+
+      <!--MAIN TITLE-->
+      
+            <div id="titulo1">
+                <h1>COMANDOS ESSENCIAIS DO LINUX</h1>
+    
+            </div>
+        
+        </header>
+
+         
+
+        <nav>
+            <ul>
+                <a href="index.html" `>
+                    <li id="li1">Menu</li>
+                </a>
+                <a href="sobre.html">
+                    <li id="li2">Sobre</li>
+                </a>
+                <a href="suporte.html">
+                    <li id="li3">Suporte</li>
+                </a>
+            </ul>
+        </nav>
+    </div>
+    </div>
+
+    <!--DIVIDING LINE-->
+
+    <hr>
+
+<!--CONTENT-->
+    <section>
+        <br>
+
+        <h2>De onde surgiu os Comandos Linux</h2>
+        <img id="logo" src="assents/logo.png" alt="mascote linux">
+        <p>O Linux é um sistema operacional de código aberto e gratuito. Ele é visto por muitos como um sistema complexo
+            de ser usado, mas, atualmente, a maioria das distribuições possui uma interface gráfica amigável.</p>
+        <p>O sistema preserva o uso através de comandos de terminal, que podem ser usados para fazer qualquer tarefa.
+            Neste artigo, serão apresentados os principais comandos para realizar as principais funções do dia a dia no
+            terminal do Linux</p>
+        <h3>Terminal</h3>
+        <p>A interface para gerência do computador por linhas de comandos é o terminal. Os comandos inseridos são
+            executados pelo interpretador de comandos (Sheel, em inglês). Os interpretadores mais famosos são o bash e o
+            tcsh. Eles variam em apresentação e em algumas funções específicas, mas todos os comandos desse artigo
+            funcionam de forma semelhante em ambos os interpretadores.
+
+            O bash é o interpretador das distribuições baseadas em Debian, como o Ubuntu e o Linux Mint. Abaixo, é
+            possível ver a visualização padrão do bash.</p>
+        <p>A linha “usuario@maquina: ~$” aparece sempre que um comando pode ser digitado e possui algumas informações
+            sobre a sessão. Antes do caractere ‘@’, exibe-se o nome do usuário que executará os comandos e, depois do
+            ‘@’, o nome da máquina. Após os dois pontos, exibe-se o caminho para a pasta atual. O último caractere
+            informa o nível de privilégio do usuário no sistema. Se este for ‘$’, como no exemplo, o usuário possui
+            acesso não privilegiado. Se este for ‘#’, por exemplo, o usuário possui prerrogativas de administrador.</p>
+        <p>Algumas operações podem ser realizadas com os dados gerados pelos comandos executados no terminal. Caso o
+            usuário deseje armazenar a saída de um comando em um arquivo para leitura posterior ao invés de visualizar
+            na tela, basta adicionar ‘> nome_do_arquivo’ ao fim do comando. Outra importante ferramenta presente no
+            terminal é a possibilidade de concatenar comandos com o caractere ‘|’. Dessa forma, a saída de um comando é
+            direcionada para a entrada de outro, como na linha “cat arquivo | grep palavra”, que veremos em detalhes
+            mais a frente, exibe apenas as linhas de ‘arquivo’ que possuam ‘palavra’.</p>
+
+        <h3>Manual dos comandos</h3>
+
+        <p><strong>man – </strong>Exibe o manual de um dado comando, incluindo seus parâmetros e opções. Em geral,
+            apresenta exemplos de
+            uso com explicações. Este comando pode ser visto como um dos mais importantes do Linux, pois ensina aos
+            usuários como eles devem fazer todas as tarefas no sistema. Use os manuais para aprender funções mais
+            avançadas dos comandos ensinados nesse artigo. Para sair do manual, aperte a tecla ‘q’.</p>
+        <p><strong>pwd – </strong>Exibe o diretório atual.</p>
+
+        <p><strong>cd –</strong> Modifica o diretório atual:
+            * “cd /” – segue para o diretório raiz;
+            * “cd /pasta/desejada” – segue para o diretório /pasta/desejada;
+            * “cd ~” ou “cd”- segue para o diretório do usuário;
+            * “cd ..” – segue para o diretório pai do diretório atual;
+            * “cd –“ – volta para o diretório anterior.</p>
+
+        <p><strong>ls –</strong> Lista os arquivos do diretório:
+            * “ls /outra/pasta” – exibe os arquivos de ‘/outra/pasta’;
+            * “ls –l” – exibe os arquivos do diretório atual em formato de lista com detalhes como tamanho, data de
+            modificação e dono de cada arquivo;
+            * “ls –a” – exibe todos os arquivos da pasta, inclusive os ocultos.</p>
+
+        <p><strong>mkdir –</strong> Cria uma nova pasta no diretório corrente:
+            * “mkdir nova_pasta” – cria a nova pasta no diretório atual;
+            * “mkdir /outra/pasta/nova_pasta” – cria a nova pasta no diretório ‘/outra/pasta’;
+            * “mkdir –p /outra/pasta/nova_pasta” – cria todas as pastas-pai necessárias para a criação da pasta desejada
+            e não apresenta erro caso a nova pasta já exista.</p>
+
+        <p><strong>rmdir –</strong> Remove um diretório vazio.</p>
+
+        <p><strong>cp – </strong>Copia arquivos e diretórios:
+            * “cp arquivo_origem arquivo_destino” – copia arquivo origem para destino;
+            * “cp arquivo_origem1 arquivo_origem2 pasta_destino/” – copia vários arquivos para uma pasta única;
+            * “cp –r pasta_origem pasta_destino/” – copia recursivamente ‘pasta_origem’ para ‘pasta_destino’.
+        </p>
+        <p><strong>mv –</strong> Move arquivos e diretórios. Também é usado para renomear arquivos. Seu uso é semelhante
+            ao comando de
+            cópia (‘cp’).</p>
+
+        <p><strong>rm –</strong> Remove arquivos e diretórios:
+            * “rm –rf pasta_temporaria” – remove recursivamente (-r) a ‘pasta_temporária’ sem que requisite confirmação
+            para cada arquivo (-f).</p>
+
+        <p><strong>du –</strong> Exibe o tamanho dos arquivos e diretórios:
+            * “du –csh *” – retorna todos os arquivos e pastas do diretório atual (*), com seus tamanhos totais (-s)
+            apresentados em megabytes e gigabytes (-h) e com um contador de total no final (-c).</p>
+
+        <p><strong>cat –</strong> Exibe o conteúdo de um arquivo:
+            * “cat arquivo1 arquivo2 > arquivo_final” – permite concatenar ‘arquivo1’ e ‘arquivo2’ e salvar o resultado
+            em ‘arquivo_final’.</p>
+
+        <p><strong>head –</strong> Exibe as primeiras linhas de um arquivo:
+            * “head –n 10 arquivo1” – exibe as 10 primeiras linhas de ‘arquivo1’.</p>
+
+        <p><strong>tail –</strong> Exibe as últimas linhas de um arquivo. Comumente usado para leitura de registros do
+            sistema:
+            * “tail –n 10 arquivo1” – exibe as 10 últimas linhas de ‘arquivo1’.</p>
+
+        <p><strong>diff –</strong> Apresenta as diferenças entre dois arquivos:
+            * “diff arquivo1 arquivo2” – lista as diferenças entre o ‘arquivo1’ e o ‘arquivo2’.
+        </p>
+        <p><strong>find –</strong> Busca arquivos e diretórios a partir de um diretório dado. Se nenhum diretório for
+            passado, é
+            utilizado o diretório atual:
+            * “find /pasta/desejada nome_do_arquivo” – busca por ‘nome_do_arquivo’ no diretório ‘/pasta/desejada’;
+            * “find /pasta/desejada –iname ‘*.mp3’” – busca por todos os arquivos com a extensão mp3 no diretório
+            ‘/pasta/desejada’.
+        </p>
+        <p><strong>locate –</strong> Busca por arquivos cujo nome siga um padrão. A busca é bem rápida, pois é realizada
+            em uma base de
+            dados pré-criada. A desvantagem desse procedimento é que a base pode ficar desatualizada e não encontrar
+            arquivos novos no sistema. Para atualizar a base de dados, execute o comando updatedb.
+            * “locate arquivo1” – apresenta todos os arquivos cujo caminho ou nome possua ‘arquivo1’.
+        </p>
+        <p><strong>df –</strong> Mostra as partições dos discos e seus tamanhos: usado e disponível:
+            * “df –h” – apresenta as informações em Megabytes (M) e Gigabytes (G) para melhor entendimento.
+        </p>
+        <p><strong>free –</strong> Mostra a quantidade de memória livre e usada no sistema:
+            * “free –m” – apresenta os valores em Megabytes;
+            * “free –g” – apresenta os valores em Gigabytes.</p>
+
+        <p><strong>uname –</strong> Apresenta informações do sistema operacional:
+            * “uname –a” – exibe o nome e a versão do kernel, o nome da máquina e arquitetura do sistema operacional (32
+            bits exibe x86 e 64 bits exibe x86_64).</p>
+
+        <p><strong>uptime –</strong> Exibe o tempo que o computador está ligado, quantos usuários estão conectados no
+            computador e a
+            carga média do sistema. A carga média do sistema é a média de processos que estão usando ou esperando para
+            usar o processador ou ainda aqueles que estão esperando para receber algum dado do disco.</p>
+
+        <br><br>
+
+    </section>
+
+    <!--FOOTER-->
+
+    <footer>
+
+        <p class="textfooter">©️ Site criado por Gustavo Rolo</p>
+
+        <div class="logosocial">
+            <a href="https://github.com/" target="_blank"><img class="social"
+                    src="assents/github.png" alt="github"></a>
+
+            <a href="https://www.linkedin.com/in/gustavo-henrique-santos-faria-rolo-2988581b0/" target="_blank"><img
+                    class="social" src="assents/linkedin.png" alt="linkedin"></a>
+            <a href="https://www.instagram.com/gus_rolo9/" target="_blank"><img class="social"
+                    src="assents/instagram.png" alt="instagram"></a>
+        </div>
+
+    </footer>
+</body>
+
+</html>
